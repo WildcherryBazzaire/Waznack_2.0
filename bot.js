@@ -32,7 +32,7 @@ client.on("ready", async () => { //adds listener when client ready
 });
 
 client.on('guildMemberAdd', async member => {
-  const channel = member.guild.channels.find(ch => ch.name === 'lobby-69');
+  const channel = member.guild.channels.find( ch => (ch.name === 'lobby-69' || ch.name === 'directors-quarters') );
   
   const canvas = Canvas.createCanvas(512,512);
   const ctx = canvas.getContext('2d');
@@ -49,7 +49,7 @@ client.on('guildMemberAdd', async member => {
 
 client.on("guildCreate", async guild => {
   
-  guild.channels.find(name => name.name == "waznack").sendMessage(`${GenerateRandom(Insults,5)}`);
+  guild.channels.find(name => (name.name == "waznack" || name.name == 'directors-quarters') ).sendMessage(`${GenerateRandom(Insults,5)}`);
   return;
 });
 
