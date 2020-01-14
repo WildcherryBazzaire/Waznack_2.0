@@ -5,8 +5,6 @@ const Canvas = require('canvas');
 
 //For MongoDB Stuff
 const { connect } = require('mongoose');
-//const WaznackSchema = require("./models/waznack");
-const { TOKEN } = require('./config.json');
 
 //Insults for Waznack to say
 const Insults = require('./ApiInsult.js');
@@ -171,8 +169,3 @@ function MentionUser(mention,message) {
     return;
   }
 }
-
-(async => {
-  await connect("mongoDB localost something");
-  return client.login(TOKEN);
-})
